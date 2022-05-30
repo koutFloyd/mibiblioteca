@@ -71,6 +71,11 @@ group :test do
   gem "webdrivers"
 end
 
+group :production do
+  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+ gem "pg"
+end
+
 # GReenDucK_cl: requisitos para activar bootstrap
 gem "bootstrap"
 gem "sassc-rails"
