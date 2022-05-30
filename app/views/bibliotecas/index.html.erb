@@ -1,0 +1,55 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Bibliotecas</h1>
+<div class="container">
+<nav class="navbar navbar-light bg-light">
+      <form class="form-inline">
+      
+      <select class="form-select" name="search" id="">
+        <option value="">Todos</option>
+        <option value="Prestado">Prestado</option>
+        <option value="Enestante">EnEstante</option>
+      </select>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+    </form>
+  
+</nav>
+
+<% if @bibliotecas.count > 0 %>
+
+<table class="table table-dark table-striped">
+  <thead>
+    <tr>
+      <th><%=sort_link(@q, :titulo)%></th>
+      <th>Autor</th>
+      <th>Estado</th>
+      <th>Fecha de Prestamo</th>
+      <th>Fecha de Devolución</th>
+    </tr>
+  </thead>
+ 
+
+    <% @bibliotecas.each do |biblioteca| %>
+      <tr>
+        <td><%= biblioteca.titulo %></td>
+        <td><%= biblioteca.autor %></td>
+        <td><%= biblioteca.estado %></td>
+        <td><%= biblioteca.fechadev %></td>
+        <td><%= biblioteca.fechapres %></td>
+        <td><%= link_to "Ver Libro", biblioteca %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+<br>
+<br>
+
+<br>
+<%else%>
+  <h1>No hay resultados para la búsqueda <%=params[:search] %></h1>
+<%end%>
+
+
+<%= link_to "Nuevo Libro", new_biblioteca_path %>
+
+</div>

@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @biblioteca %>
+
+<div>
+  <%= link_to "Edit this biblioteca", edit_biblioteca_path(@biblioteca) %> |
+  <%= link_to "Volver", bibliotecas_path %>
+
+  <%= button_to "Destroy this biblioteca", @biblioteca, method: :delete %>
+</div>

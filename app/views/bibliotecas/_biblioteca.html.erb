@@ -1,0 +1,28 @@
+<div id="<%= dom_id biblioteca %>">
+
+  <p>
+    <strong>Titulo:</strong>
+    <%= biblioteca.titulo %>
+  </p>
+
+  <p>
+    <strong>Autor:</strong>
+    <%= biblioteca.autor %>
+  </p>
+
+  <p>
+    <label for="estado">Estado</label>
+    <%=select_tag(:estado, options_for_select([['Prestado',1],['EnEstante',2]]))%>
+  </p>
+
+  <p>
+    <strong>Fecha de préstamo:</strong>
+    <%= biblioteca.fechapres %>
+  </p>
+
+  <p>
+    <strong>Fecha de devolución:</strong>
+    <%= biblioteca.fechadev %>
+  </p>
+
+</div>
